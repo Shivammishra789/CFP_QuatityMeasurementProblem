@@ -11,7 +11,7 @@ from quatity_mesurement import Measurement
 
 class TestMeasurement:
 
-    @pytest.mark.parametrize('len1,unit1,len2,unit2', [(0.0, "feet", 0.0, "feet")])
+    @pytest.mark.parametrize('len1,unit1,len2,unit2', [(0.0, "feet", 0.0, "feet"),(0.0, "feet", 0.0, "inch")])
     def test_zero_feet_and_zero_feet_return_equal(self,len1, unit1, len2, unit2):
         obj1 = Measurement(len1, unit1)
         obj2 = Measurement(len2, unit2)
