@@ -18,6 +18,10 @@ class Measurement:
             return True
         elif other.length is None:
             raise QuatityCustomException("Value can't be none")
-        elif self.length is other.length:
+        elif id(self.length) != id(other.length):
             raise QuatityCustomException("Reference are different")
+        elif isinstance(other.length, float):
+            return True
+
+
 
