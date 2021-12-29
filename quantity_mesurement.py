@@ -17,15 +17,15 @@ class Measurement:
     def __eq__(self, other):
 
         if self.unit == "feet" and other.unit == "inch":
-            self.length = self.length*12      # making units same to feet
+            other.length = other.length/12      # making units same
             if self.length == other.length:
                 return True
         elif self.unit == "inch" and other.unit == "feet":
-            self.length = self.length*12        # making units same to feet
+            self.length = self.length/12      # making units same to feet
             if self.length == other.length:
                 return True
         elif self.unit == "feet" and other.unit == "yard":
-            other.length = other.length*3       # making units same to feet
+            other.length = other.length*3      # making units same to feet
             if self.length == other.length:
                 return True
         elif self.unit == "yard" and other.unit == "feet":
