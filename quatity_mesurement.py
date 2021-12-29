@@ -7,6 +7,9 @@ from quatity_custom_execption import QuatityCustomException
 
 
 class Measurement:
+    """
+    Takes to parameter length and unit equals method is been overrided
+    """
 
     def __init__(self, length, unit):
         self.length = length
