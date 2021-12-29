@@ -22,6 +22,6 @@ class Measurement:
             raise QuatityCustomException("Reference are different")
         elif isinstance(other.length, float):
             return True
-
-
+        elif self.length == other.length:
+            return True
 

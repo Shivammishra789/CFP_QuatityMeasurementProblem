@@ -39,6 +39,12 @@ class TestMeasurement:
         obj2 = Measurement(len2, unit2)
         assert obj1 == obj2
 
+    @pytest.mark.parametrize('len1,unit1,len2,unit2', [(2.0, "feet", 2.0, "feet")])
+    def test_whether_value_is_equal(self, len1, unit1, len2, unit2):
+        obj1 = Measurement(len1, unit1)
+        obj2 = Measurement(len2, unit2)
+        assert obj1 == obj2
+
 
 
 
