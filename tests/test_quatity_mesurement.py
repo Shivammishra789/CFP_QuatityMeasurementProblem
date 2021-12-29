@@ -1,7 +1,7 @@
 '''
 @author: Shivam Mishra
 @date: 29-12-21 12:09 PM
-
+@desc: test cases for comparing length
 '''
 import pytest as pytest
 
@@ -39,11 +39,18 @@ class TestMeasurement:
         obj2 = Measurement(len2, unit2)
         assert obj1 == obj2
 
-    @pytest.mark.parametrize('len1,unit1,len2,unit2', [(2.0, "feet", 2.0, "feet"), (2.0, "inch", 2.0, "inch")])
+    @pytest.mark.parametrize('len1,unit1,len2,unit2', [(2.0, "feet", 2.0, "feet"), (2.0, "inch", 2.0, "inch"),
+                                                       (1.0, "feet", 12.0, "inch"),(1.0, "inch", 12.0, "feet")])
     def test_whether_value_is_equal(self, len1, unit1, len2, unit2):
         obj1 = Measurement(len1, unit1)
         obj2 = Measurement(len2, unit2)
         assert obj1 == obj2
+
+    @pytest.mark.parametrize('len1,unit1,len2,unit2', [(1.0, "feet", 1.0, "inch"), (1.0, "inch", 1.0, "feet")])
+    def test_whether_values_are_not_equal(self, len1, unit1, len2, unit2):
+        obj1 = Measurement(len1, unit1)
+        obj2 = Measurement(len2, unit2)
+        assert obj1 != obj2
 
 
 
