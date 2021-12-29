@@ -16,5 +16,8 @@ class Measurement:
 
         if self.length == 0.0 and other.length == 0.0:
             return True
-        if other.length is None:
+        elif other.length is None:
             raise QuatityCustomException("Value can't be none")
+        elif self.length is other.length:
+            raise QuatityCustomException("Reference are different")
+

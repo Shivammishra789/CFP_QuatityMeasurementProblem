@@ -18,9 +18,20 @@ class TestMeasurement:
         assert obj1 == obj2
 
     @pytest.mark.parametrize('len1,unit1,len2,unit2', [(0.0,"feet",None,"feet")])
-    def test_if_none_return_exeception(self, len1, unit1, len2, unit2):
+    def test_if_none_return_exception(self, len1, unit1, len2, unit2):
         obj1 = Measurement(len1, unit1)
         obj2 = Measurement(len2, unit2)
         with pytest.raises(QuatityCustomException) as exeception:
             obj1 == obj2
         assert exeception.value.message == "Value can't be none"
+
+    def test_whether_reference_are_equal(self):
+        obj1 = Measurement(1, "feet")
+        obj2 = Measurement(1, "feet")
+        with pytest.raises(QuatityCustomException) as exeception:
+            obj1 == obj2
+        assert exeception.value.message == "Reference are different"
+
+
+
+
